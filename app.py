@@ -1,26 +1,34 @@
 #app idea?
-numOne = int(input("Enter number one: "))
-operator = input("Enter Operator: ")
-numTwo = int(input("Enter number two: "))
-
-
 
 
 def calculator(numOne, numTwo, operator):
-  if(operator == "+"):
-    return numOne + numTwo
+    if(operator == "+"):
+      return numOne + numTwo
+    
+    if(operator == "-"):
+      return numOne - numTwo
+    
+    if(operator == "*"):
+      return numOne * numTwo
+    
+    if(operator == "/"):
+      return numOne / numTwo
+
+while 1 == 1:
+  numOne = int(input(':'))
+  if numOne == 'x':
+    break
   
-  if(operator == "-"):
-    return numOne - numTwo
+  operator = input(':')
+  if operator == 'x':
+    break
   
-  if(operator == "*"):
-    return numOne * numTwo
-  
-  if(operator == "/"):
-    return numOne / numTwo
-  
-print(calculator(numOne,numTwo,operator))  
-  
+  numTwo = int(input(':'))
+  if numTwo == 'x':
+    break
+
+  print(calculator(numOne,numTwo,operator))  
+    
 
 
 
