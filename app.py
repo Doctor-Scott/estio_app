@@ -1,6 +1,3 @@
-#app idea?
-
-
 def calculator(numOne, numTwo, operator):
     if(operator == "+"):
       return numOne + numTwo
@@ -13,6 +10,9 @@ def calculator(numOne, numTwo, operator):
     
     if(operator == "/"):
       return numOne / numTwo
+
+
+
 
 while 1 == 1:
   numOne = int(input(':'))
@@ -27,11 +27,8 @@ while 1 == 1:
   if numTwo == 'x':
     break
 
-  print(calculator(numOne,numTwo,operator))  
+  print(f"{numOne} {operator} {numTwo} = {calculator(numOne,numTwo,operator)}")  
     
-
-
-
 
 
 
