@@ -14,7 +14,7 @@ def calculator(numOne, numTwo, operator):
 
 
 
-while 1 == 1:
+while True:
   numOne = int(input(':'))
   if numOne == 'x':
     break
@@ -27,7 +27,7 @@ while 1 == 1:
   if numTwo == 'x':
     break
 
-  print(f"{numOne} {operator} {numTwo} = {calculator(numOne,numTwo,operator)}")  
+  print(f"{numOne} {operator} {numTwo} = {calculator(numOne, numTwo, operator)}")  
     
 
 
