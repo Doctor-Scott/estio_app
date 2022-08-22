@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 @app.route("/",methods=['GET', 'POST'] )
 def main():
-  numOne = request.form.get('numOne',0)
-  numTwo = request.form.get('numTwo',0)
+  numOne = int(request.form.get('numOne',0))
+  numTwo = int(request.form.get('numTwo',0))
   operator = request.form.get('operator','')
   result = ''
   if(operator == "+"):
