@@ -1,35 +1,24 @@
-def calculator(numOne, numTwo, operator):
-    if(operator == "+"):
-      return numOne + numTwo
-    
-    if(operator == "-"):
-      return numOne - numTwo
-    
-    if(operator == "*"):
-      return numOne * numTwo
-    
-    if(operator == "/"):
-      return numOne / numTwo
+from flask import Flask, request, render_template
+from re import search
+app = Flask(__name__)
 
-
-
-
-while True:
-  numOne = int(input(':'))
-  if numOne == 'x':
-    break
+@app.route("/",methods=['GET', 'POST'] )
+def main():
+ if(operator == "+"):
+    return numOne + numTwo
   
-  operator = input(':')
-  if operator == 'x':
-    break
+  if(operator == "-"):
+    return numOne - numTwo
   
-  numTwo = int(input(':'))
-  if numTwo == 'x':
-    break
+  if(operator == "*"):
+    return numOne * numTwo
+  
+  if(operator == "/"):
+    return numOne / numTwo
+  
+  
+  
 
-  print(f"{numOne} {operator} {numTwo} = {calculator(numOne, numTwo, operator)}")  
-    
-
-
-
-#hello
+    return render_template('main.html', )
+  
+  

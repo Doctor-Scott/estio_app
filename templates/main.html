@@ -1,0 +1,22 @@
+<form method="POST">
+  <input name="Value 1" value="{{ numOne }}">
+
+  <input name="Value 2" value="{{ numTwo }}">
+  <select id="operation" name="operation">
+    <option value="+">Addition</option>
+    <option value="-">Subtraction</option>
+    <option value="/">Division</option>
+    <option value="*">Multiplication</option>
+</select>
+  <input type="submit" value="Calculate">
+  </form>
+
+{% comment %}  {% endcomment %}
+  <p>
+
+{% comment %} {% if calculation_success == True %}
+    <br/>
+    <p>The calculation for {{numOne}} {{operation}} {{numTwo}} is: {{result}}</p>
+{% endif %} {% endcomment %}
+  <a href="/">reset</a>
+
