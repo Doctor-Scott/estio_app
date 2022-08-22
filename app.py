@@ -4,21 +4,25 @@ app = Flask(__name__)
 
 @app.route("/",methods=['GET', 'POST'] )
 def main():
- if(operator == "+"):
-    return numOne + numTwo
+  numOne = request.form.get('numOne',0)
+  numTwo = request.form.get('numTwo',0)
+  operator = request.form.get('operator','')
+  result = ''
+  if(operator == "+"):
+    result =  numOne + numTwo
   
   if(operator == "-"):
-    return numOne - numTwo
+    result = numOne - numTwo
   
   if(operator == "*"):
-    return numOne * numTwo
+    result = numOne * numTwo
   
   if(operator == "/"):
-    return numOne / numTwo
+    result = numOne / numTwo
   
   
   
 
-    return render_template('main.html', )
+  return render_template('main.html')
   
   
