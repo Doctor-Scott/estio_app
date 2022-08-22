@@ -1,3 +1,4 @@
+from calculator import calculate
 from flask import Flask, request, render_template
 from re import search
 app = Flask(__name__)
@@ -8,21 +9,10 @@ def main():
   numTwo = int(request.form.get('numTwo',0))
   operator = request.form.get('operator','')
   result = ''
-  if(operator == "+"):
-    result =  numOne + numTwo
   
-  if(operator == "-"):
-    result = numOne - numTwo
+  if operator != '':
+    result = calculate(numOne, numTwo, operator)
   
-  if(operator == "*"):
-    result = numOne * numTwo
-  
-  if(operator == "/"):
-    result = numOne / numTwo
-  
-  
-  
-
   return render_template('main.html', result = result)
   
   
