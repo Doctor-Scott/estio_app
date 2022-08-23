@@ -14,5 +14,3 @@ def main():
     result = calculate(numOne, numTwo, operator)
   
   return render_template('main.html', result = result)
-
-  
