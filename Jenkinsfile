@@ -9,7 +9,7 @@ pipeline {
         stage('Clean Up') {
             steps {
                 sh '''
-                      sudo docker system prune -a -f
+                      docker system prune -a -f
                       docker stop $(docker ps -aq)
                       docker rm $(docker ps -aq)
                       docker rmi $(docker images -q)
@@ -18,7 +18,7 @@ pipeline {
             }
         stage('Build') {
             steps {
-                sh 'sudo docker-compose up -d'
+                sh 'docker-compose up -d'
             }
         }
         // stage('Deploying') {
