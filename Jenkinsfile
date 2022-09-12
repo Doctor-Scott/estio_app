@@ -8,7 +8,7 @@ pipeline {
         // }
         stage('Test') { 
             steps {
-                sh 'sudo pytest /home/ubuntu/estio_app/test.py'
+                sh 'sudo pytest test.py'
             }
         }
         stage('Clean Up') {
