@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    parameters {
+        booleanParam(name: 'Refresh',
+                    defaultValue: false,
+                    description: 'Read Jenkinsfile and exit.')
+		    }
     stages {
         // stage('Pre') { hello from Jenkins!
         //     steps {
@@ -14,17 +19,13 @@ pipeline {
         stage('Clean Up') {
             steps {
                 sh '''
-
-docker stop $(docker ps -aq)
-docker rm $(docker ps -aq)
-docker rmi $(docker images -q)
-
+                      sudo docker system prune -a -f
                    '''
             }
             }
         stage('Build') {
             steps {
-                sh 'sudo docker-compose build'
+                sh 'sudo docker-compose up -d'
             }
         }
         // stage('Deploying') {
