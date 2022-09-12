@@ -13,7 +13,7 @@ pipeline {
         // }
         stage('Test') { 
             steps {
-                sh 'sudo pytest /home/jenkins/estio_app/test.py'
+                sh 'sudo pytest /home/ubuntu/estio_app/test.py'
             }
         }
         stage('Clean Up') {
