@@ -1,14 +1,15 @@
-  
-  <form method="POST">
-  <input name="numOne" value="{{ numOne }}">
-  <input name="numTwo" value="{{ numTwo }}">
-  <input name="operator" value="{{ operator }}">
-  
-  <input type="submit" value="submit number">
-  </form>
-  <p>
-  <a href="/">reset</a>
+<form method="POST">
+  <input name="numOne" value="{{ numOne }}" />
+  <input name="numTwo" value="{{ numTwo }}" />
+  <input name="operator" value="{{ operator }}" />
 
-{%if result != ''%}
+  <input type="submit" value="submit number" />
+</form>
+<p>
+  <a href="/">reset?</a>
+
+  {%if result != ''%}
+</p>
+
 <p>{{ result }}</p>
 {% endif %}
