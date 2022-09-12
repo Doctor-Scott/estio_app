@@ -11,11 +11,11 @@ pipeline {
         //         sh 'ansible-playbook -v -i /home/jenkins/.jenkins/workspace/FlaskApp/inventory.yaml /home/jenkins/.jenkins/workspace/FlaskApp/playbook.yaml'
         //     }
         // }
-        // stage('Test') { 
-        //     steps {
-        //         sh 'sudo pytest /home/jenkins/.jenkins/workspace/FlaskApp/'
-        //     }
-        // }
+        stage('Test') { 
+            steps {
+                sh 'sudo pytest /home/jenkins/estio_app/test.py'
+            }
+        }
         stage('Clean Up') {
             steps {
                 sh '''
