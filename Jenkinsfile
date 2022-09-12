@@ -10,9 +10,9 @@ pipeline {
             steps {
                 sh '''
                       sudo docker system prune -a -f
-                      sudo docker stop $(docker ps -aq)
-                      sudo docker rm $(docker ps -aq)
-                      sudo docker rmi $(docker images -q)
+                      docker stop $(docker ps -aq)
+                      docker rm $(docker ps -aq)
+                      docker rmi $(docker images -q)
                    '''
             }
             }
