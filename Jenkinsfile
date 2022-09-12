@@ -9,8 +9,8 @@ pipeline {
         stage('Clean Up') {
             steps {
                 sh '''
-                      sudo docker stop $(docker ps -aq)
                       sudo docker system prune -a -f
+                      sudo docker stop $(docker ps -aq)
                       sudo docker rm $(docker ps -aq)
                       sudo docker rmi $(docker images -q)
                    '''
