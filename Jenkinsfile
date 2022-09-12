@@ -19,7 +19,15 @@ pipeline {
         stage('Clean Up') {
             steps {
                 sh '''
-                      sudo docker system prune -a -f
+
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q)
+
+rm -rf estio_app
+git clone https://github.com/Doctor-Scott/estio_app.git
+cd estio_app
+
                    '''
             }
             }
