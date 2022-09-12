@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        // stage('Pre') { hello from Jenkins!
-        //     steps {
-        //         sh 'ansible-playbook -v -i /home/jenkins/.jenkins/workspace/FlaskApp/inventory.yaml /home/jenkins/.jenkins/workspace/FlaskApp/playbook.yaml'
-        //     }
-        // }
         stage('Test') { 
             steps {
                 sh 'sudo pytest test.py'
@@ -14,10 +9,10 @@ pipeline {
         stage('Clean Up') {
             steps {
                 sh '''
+                      sudo docker stop $(docker ps -aq)
                       sudo docker system prune -a -f
-                      docker stop $(docker ps -aq)
-                      docker rm $(docker ps -aq)
-                      docker rmi $(docker images -q)
+                      sudo docker rm $(docker ps -aq)
+                      sudo docker rmi $(docker images -q)
                    '''
             }
             }
@@ -38,20 +33,3 @@ pipeline {
         // }
     }
 }
-
-// pipeline {
-//     agent any
-//     parameters {
-//         booleanParam(name: 'Refresh',
-//                     defaultValue: false,
-//                     description: 'Read Jenkinsfile and exit.')
-//                     }
-//     stages {
-//         stage('</>') {
-//             steps {
-//                 sh '</>'
-//             }
-//         }
-//         </>
-//     }
-//  }
