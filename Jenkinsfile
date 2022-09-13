@@ -16,11 +16,11 @@ pipeline {
                    '''
             }
             }
-        stage('Build') {
-            steps {
-                sh 'sudo docker-compose up -d'
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh 'sudo docker-compose up -d'
+        //     }
+        // }
         stage('Deploying') {
             steps {
                 sh '''
