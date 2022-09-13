@@ -6,7 +6,7 @@ pipeline {
                 sh 'sudo pytest test.py'
             }
         }
-        stage('Clean Up') {
+        stage('Destory running instances') {
             steps {
                 sh '''
                       docker system prune -a -f
