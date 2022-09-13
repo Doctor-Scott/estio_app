@@ -6,16 +6,16 @@ pipeline {
                 sh 'sudo pytest test.py'
             }
         }
-        stage('Destory running instances') {
-            steps {
-                sh '''
-                      docker-compose down
-                      docker system prune -a -f
+        // stage('Destory running instances') {
+        //     steps {
+        //         sh '''
+        //               docker-compose down
+        //               docker system prune -a -f
                       
                      
-                   '''
-            }
-            }
+        //            '''
+        //     }
+        //     }
         // stage('Build') {
         //     steps {
         //         sh 'sudo docker-compose up -d'
@@ -30,7 +30,7 @@ pipeline {
                     cd estio_app
                     sudo docker-compose down
                     sudo docker system prune -a -f                  
-                    sudo docker-compose up -d
+                    sudo docker-compose up --build
                 '''
             }
         }
