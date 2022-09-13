@@ -21,15 +21,18 @@ pipeline {
                 sh 'sudo docker-compose up -d'
             }
         }
-        // stage('Deploying') {
-        //     steps {
-        //         sh '''
-        //             ssh -i /home/jenkins/.ssh/Estio-Training-NForester -o StrictHostKeyChecking=no jenkins@10.0.1.10
-        //             sudo docker-compose -f /home/ubuntu/APIPrimeAge/docker-compose.yaml down
-        //             sudo docker system prune -a -f                  
-        //             sudo docker-compose -f /home/ubuntu/APIPrimeAge/docker-compose.yaml build
-        //         '''
-        //     }
-        // }
+        stage('Deploying') {
+            steps {
+                sh '''
+                    ssh -i /home/jenkins/.ssh/Estio-Ubuntu.pem -o StrictHostKeyChecking=no ubuntu@18.130.214.109
+                    rm -rf estio_app
+                    git clone https://github.com/Doctor-Scott/estio_app.git
+                    cd estio_app
+                    sudo docker-compose down
+                    sudo docker system prune -a -f                  
+                    sudo docker-compose up -d
+                '''
+            }
+        }
     }
 }
