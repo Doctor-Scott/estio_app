@@ -24,7 +24,7 @@ pipeline {
         stage('Deploying') {
             steps {
                 sh '''
-                    ssh -tt -i /home/jenkins/.ssh/Estio-Ubuntu.pem -o StrictHostKeyChecking=no ubuntu@18.130.214.109
+                    ssh -i /home/jenkins/.ssh/Estio-Ubuntu.pem -o StrictHostKeyChecking=no ubuntu@18.130.214.109
                     rm -rf estio_app
                     git clone https://github.com/Doctor-Scott/estio_app.git
                     cd estio_app
