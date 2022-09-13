@@ -11,9 +11,8 @@ pipeline {
                 sh '''
                       
                       docker system prune -a -f
-                      docker stop estioapp
-                      docker rm estioapp
-                      docker rmi estioapp
+                      docker stop $(docker ps -aq) || true && docker rm $(docker ps -aq) || true
+                     
                    '''
             }
             }
