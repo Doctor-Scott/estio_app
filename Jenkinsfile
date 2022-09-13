@@ -9,7 +9,7 @@ pipeline {
         stage('Destory running instances') {
             steps {
                 sh '''
-                      
+                      docker-compose down
                       docker system prune -a -f
                       docker stop $(docker ps -aq) || true && docker rm $(docker ps -aq) || true
                      
