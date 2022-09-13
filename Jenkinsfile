@@ -11,14 +11,14 @@ pipeline {
                 sh '''
                       docker-compose down
                       docker system prune -a -f
-                      docker stop $(docker ps -aq) || true && docker rm $(docker ps -aq) || true
+                      
                      
                    '''
             }
             }
         stage('Build') {
             steps {
-                sh 'docker-compose up -d'
+                sh 'docker-compose deploy -d'
             }
         }
         // stage('Deploying') {
