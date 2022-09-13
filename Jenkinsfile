@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') { 
             steps {
-                sh 'sudo pytest test.py'
+                sh 'sudo pytest code/test.py'
             }
         }
         // stage('Destory running instances') {

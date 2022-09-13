@@ -6,7 +6,7 @@ RUN apt install python3 python3-pip python3-venv -y
 
 RUN mkdir /code
 
-COPY . /code
+COPY ./code /code
 WORKDIR /code
 
 RUN pip3 install flask
