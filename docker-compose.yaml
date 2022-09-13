@@ -1,11 +1,10 @@
-version: '3.7'
+version: "3.7"
 services:
   main:
-    image: flaskapp:latest
+    image: estioapp:latest
     build: .
     ports:
-        - target: 5000
-          published: 80
+      - target: 5000
+        published: 80
     deploy:
       replicas: 1
-  

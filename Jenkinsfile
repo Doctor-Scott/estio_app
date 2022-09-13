@@ -9,10 +9,11 @@ pipeline {
         stage('Destory running instances') {
             steps {
                 sh '''
+                      
                       docker system prune -a -f
-                      docker stop $(docker ps -aq)
-                      docker rm $(docker ps -aq)
-                      docker rmi $(docker images -q)
+                      docker stop estioapp
+                      docker rm estioapp
+                      docker rmi estioapp
                    '''
             }
             }
